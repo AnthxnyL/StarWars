@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <link rel="stylesheet" href="style.css">
+  <title>HyperSpace</title>
+</head>
+<body style="margin:0; background-color: black;">
+  <canvas id="canvas" class="canvas"></canvas>
+    
+  <div class="starwars-demo">
+    <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" class="star">
+    <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" class="wars">
+    <h2 class="byline" id="byline">Rise of the Shadows</h2>
+  </div>
+
+  <div class="container-text">
+    <div class="fade"></div>
+  
+    <section class="star-wars">
+      <div class="crawl">
+        <div class="title">
+          <p>Episode X</p>
+          <h1>Rise of the Shadows</h1>
+        </div>
+        
+        <p>La galaxie est au bord du chaos.</p>
+          
+          <p>Des années après la chute du Dernier Ordre, une paix fragile s’est étendue à travers les étoiles. Mais dans la Bordure Extérieure, des murmures évoquent une nouvelle obscurité surgissant des cendres des anciens empires.</p>
+  
+        <p>Une faction mystérieuse, connue uniquement sous le nom de LÉGION DE L’OMBRE, a émergé, semant la peur dans les systèmes non protégés par la Nouvelle République. Leur objectif : s’approprier un pouvoir ancien, perdu depuis l’ère des Sith.</p>
+
+        <p>Pendant ce temps, une nouvelle génération de Jedi, guidée par Rey Skywalker, se lance dans une course pour découvrir les secrets de la Force avant que les Ombres n’engloutissent la lumière à jamais…</p>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+
+
+  <audio  id="sound" src="./assets/music.mp3" preload="auto"></audio>
+  <script src="./script/stars.js"></script>
+  <script src="./script/name.js"></script>
+  <script src="./script/sound.js"></script>
+</body>
+
+<script>
+  // Quand l'animation .wars se termine, on cache .starwars-demo et on affiche .container-text
+  document.querySelector('.wars').addEventListener('animationend', function() {
+    document.querySelector('.starwars-demo').classList.add('hide');
+    document.querySelector('.container-text').classList.add('visible');
+  });
+</script>
+</html>
