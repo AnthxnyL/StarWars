@@ -14,3 +14,15 @@ for (const char of bylineText) {
 
 byline.textContent = ''; 
 byline.appendChild(fragment);
+
+
+const crawl = document.querySelector('.crawl');
+const containerText = document.querySelector('.container-text');
+const planets = document.querySelector('.planets');
+
+crawl.addEventListener('animationend', function() {
+containerText.classList.remove('visible');
+planets.classList.add('visible');
+});
+
+

@@ -10,7 +10,7 @@ const ALPHA_LIMIT = 1
 const SCALE_STEP = 0.001
 
 class Star {
-  canvas = document.getElementById('canvas')
+  canvas = document.createElement('canvas')
   context = this.canvas.getContext('2d')
   STATE = {
     active: false,
@@ -113,7 +113,7 @@ class HyperSpace {
     starPool: [],
   }
 
-  canvas = document.createElement('canvas')
+  canvas = document.getElementById('canvas')
   context = this.canvas.getContext('2d')
   render = () => {
     const { context } = this

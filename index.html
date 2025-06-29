@@ -16,43 +16,72 @@
   </div>
 
   <div class="container-text">
+
     <div class="fade"></div>
-  
+
     <section class="star-wars">
       <div class="crawl">
         <div class="title">
           <p>Episode X</p>
           <h1>Rise of the Shadows</h1>
         </div>
-        
         <p>La galaxie est au bord du chaos.</p>
-          
-          <p>Des années après la chute du Dernier Ordre, une paix fragile s’est étendue à travers les étoiles. Mais dans la Bordure Extérieure, des murmures évoquent une nouvelle obscurité surgissant des cendres des anciens empires.</p>
-  
+        <p>Des années après la chute du Dernier Ordre, une paix fragile s’est étendue à travers les étoiles. Mais dans la Bordure Extérieure, des murmures évoquent une nouvelle obscurité surgissant des cendres des anciens empires.</p>
         <p>Une faction mystérieuse, connue uniquement sous le nom de LÉGION DE L’OMBRE, a émergé, semant la peur dans les systèmes non protégés par la Nouvelle République. Leur objectif : s’approprier un pouvoir ancien, perdu depuis l’ère des Sith.</p>
-
         <p>Pendant ce temps, une nouvelle génération de Jedi, guidée par Rey Skywalker, se lance dans une course pour découvrir les secrets de la Force avant que les Ombres n’engloutissent la lumière à jamais…</p>
       </div>
     </section>
   </div>
+  
+  <div class="container-planet">
+      <div class="planet planet1"> 
+          <div class="wrap"> 
+          </div>
+        <div class="mask"></div>
+      </div>
+      <div class="planet planet2"> 
+          <div class="wrap">
+          </div>
+        <div class="mask"></div>
+      </div>    
+
+  </div>
 
 
+  <div class="final-announcement">
+    <p class="line1">Disponible dans toutes les galaxies,</p>
+    <p class="line2">dès le <strong>26 mai 2026</strong>.</p>
+    <p class="line3">Uniquement au cinéma.</p>
+  </div>
 
 
-
-
-
-  <audio  id="sound" src="./assets/music.mp3" preload="auto"></audio>
+  <audio  id="sound" src="./assets/music.mp3" preload="auto" autoplay loop></audio>
+  <button id="sound-toggle">
+    <span id="megaphone-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffe81f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 11v2a1 1 0 0 0 1 1h2l5 5V5L6 11H4a1 1 0 0 0-1 1z"/>
+        <path d="M16 8a5 5 0 0 1 0 8"/>
+      </svg>
+    </span>
+  </button>
+      
   <script src="./script/stars.js"></script>
   <script src="./script/name.js"></script>
   <script src="./script/sound.js"></script>
-</body>
-
-<script>
-  // Quand l'animation .wars se termine, on cache .starwars-demo et on affiche .container-text
-  document.querySelector('.wars').addEventListener('animationend', function() {
-    document.querySelector('.starwars-demo').classList.add('hide');
-    document.querySelector('.container-text').classList.add('visible');
+  <script src="./script/deathStar.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelector('.starwars-demo').classList.add('hide');
+      document.querySelector('.container-text').classList.add('visible');
+  
+      setTimeout(() => {
+        document.querySelector('.planet1').classList.add('appear');
+        document.querySelector('.planet2').classList.add('appear');
+      }, 20000);
+    }, 9500);
   });
-</script>
+  </script>
+  
+</body>
 </html>

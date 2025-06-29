@@ -1,0 +1,133 @@
+.container-planet {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.planet{
+    z-index: 999;
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    overflow: hidden;
+    transition: box-shadow 0.4s, filter 0.4s;
+}
+.planet .mask{
+  width:100%;
+  height:100%;
+  position: absolute;
+  box-shadow:inset -10px -10px 40px #000000, inset 10px 10px 30px -10px rgba(118, 118, 118, 0.6);
+  border-radius:50%;
+}
+
+.planet .wrap{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+}
+
+
+.planet1:hover {
+  box-shadow:
+    0 0 80px 30px rgba(183, 153, 6, 0.533),        
+    0 0 120px 60px #ffe08244,   
+    0 0 60px -20px rgba(255, 189, 3, 0.32),
+    -14px -15px 40px -10px rgba(255, 238, 191, 0.13);
+}
+
+.planet2:hover {
+   box-shadow:
+    0 0 80px 30px rgba(80, 153, 183, 0.533),        
+    0 0 120px 60px #82d0ff44,   
+    0 0 60px -20px rgba(3, 189, 255, 0.32),
+    -14px -15px 40px -10px rgba(191, 238, 255, 0.13);
+}
+
+
+/* Planète à gauche */
+.planet1 {
+    background: url('../assets/planet1.png') no-repeat center center;
+    box-shadow: 0 0 60px -20px rgba(255, 189, 3, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23);
+    left: 5vw;
+    top: 30vh;
+    width: 220px;
+    height: 220px;
+}
+
+/* Planète à droite */
+.planet2 {
+    background: url('../assets/planet2.png') no-repeat center center;
+    box-shadow: 0 0 60px -20px rgba(1, 174, 9, 0.72), -14px -15px 40px -10px rgba(19, 80, 2, 0.23);
+    right: 5vw;
+    top: 55vh;
+    width: 320px;
+    height: 320px;
+}
+
+
+
+.planet1, .planet2 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+@keyframes approachAndExitLeft {
+  0% {
+    transform: scale(0.4) translateX(-100vw);
+    opacity: 1;
+    filter: blur(6px);
+  }
+  25% {
+    transform: scale(1) translateX(-20vw);
+    opacity: 1;
+    filter: blur(2px);
+  }
+  50% {
+    transform: scale(1.5) translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(6) translateX(-20vw);
+    opacity: 1;
+    filter: blur(8px);
+  }
+}
+
+
+
+@keyframes approachAndExitRight {
+  0% {
+    transform: scale(0.4) translateX(100vw);
+    opacity: 1;
+    filter: blur(6px);
+  }
+  25% {
+    transform: scale(1) translateX(20vw);
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    transform: scale(2) translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(4) translateX(20vw);
+    opacity: 1;
+    filter: blur(8px);
+  }
+}
+
+.planet1.appear {
+  animation: approachAndExitLeft 45s ease-in-out forwards;
+  pointer-events: auto;
+}
+
+.planet2.appear {
+  animation: approachAndExitRight 40s ease-in-out forwards;
+  pointer-events: auto;
+}
